@@ -42,19 +42,18 @@ const getIdealSleepHours = () => {
 const calculateSleepDebt = () => {
   const actualSleepHours = getActualSleepHours();
   const idealSleepHours = getIdealSleepHours();
-};
+  if (actualSleepHours === idealSleepHours) {
+    console.log('Tidurmu cukup nak, jaga kesehatan');
+  } else if (actualSleepHours > idealSleepHours) {
+    console.log('Ngeboo wae terus, koyo raono gawean');
+  } else {
+    console.log('Kamu kurang tidur, tidur sana gih')
+  };
 
-if (actualSleepHours === idealSleepHours) {
-  console.log('Tidurmu cukup nak, jaga kesehatan');
-} else if (actualSleepHours > idealSleepHours) {
-  console.log('Ngeboo wae terus, koyo raono gawean');
-} else {
-  console.log('Kamu kurang tidur, tidur sana gih')
-};
-
-if (actualSleepHours < idealSleepHours)  {
-  console.log(`You got ${idealSleepHours - actualSleepHours} hour(s) less sleep
-  than you needed this  week. Get some rest.`);
+  if (actualSleepHours < idealSleepHours)  {
+    console.log(`You got ${idealSleepHours - actualSleepHours} hour(s) less sleep
+    than you needed this  week. Get some rest.`);
+  };
 };
 
 calculateSleepDebt();
